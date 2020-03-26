@@ -9,11 +9,11 @@ const forecast = (latitude, longitude, callback) =>{
         }else if (response.body.error) {
             callback('unable to find location',undefined)
         }else{
-            callback(undefined,response.body.daily.data[0].summary+ "It is currently "+response.body.currently.temperature+" degree out."+ " There is a "+response.body.currently.precipProbability+"% chance of rain");//above work same as it 
+           // console.log(response.body.daily.data[0])
+            callback(undefined,response.body.daily.data[0].summary+ "It is currently "+response.body.currently.temperature+" degree out. This high today is "+response.body.daily.data[0].temperatureHigh+  " with a low of "+response.body.daily.data[0].temperatureLow +". There is a "+response.body.currently.precipProbability+"% chance of rain");//above work same as it 
         }
     })
 }
-
 //using destructuring 
 
 /*const forecast = (latitude, longitude, callback) =>{
